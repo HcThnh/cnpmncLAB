@@ -1,5 +1,6 @@
 package vn.edu.hcmut.cse.adsoftweng.lab.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,5 +21,18 @@ public class StudentService {
 
     public Student getById(String id) {
         return repository.findById(id).orElse(null);
+    }
+
+    public List<Student> searchByName(String name) {
+        List<Student> allStudents = repository.findAll();
+        List<Student> findedStudents = new ArrayList<>();
+
+        for (Student m : allStudents) {
+            if (m.getName() == name) {
+                findedStudents.add(m);
+            } 
+        }
+
+        return findedStudents;
     }
 }
