@@ -7,6 +7,5 @@ import vn.edu.hcmut.cse.adsoftweng.lab.entity.Student;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student, String> {
-
     
 }

@@ -26,9 +26,10 @@ public class StudentService {
     public List<Student> searchByName(String name) {
         List<Student> allStudents = repository.findAll();
         List<Student> findedStudents = new ArrayList<>();
+        String lowercaseName = name.toLowerCase();
 
         for (Student m : allStudents) {
-            if (m.getName() == name) {
+            if (m.getName().toLowerCase().equals(lowercaseName)) {
                 findedStudents.add(m);
             } 
         }
