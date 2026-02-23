@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thêm Mới Sinh Viên</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .form-container { max-width: 400px; border: 1px solid #ddd; padding: 20px; border-radius: 5px; background-color: #f9f9f9; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        
+        /* CSS cho thẻ input */
+        .form-group input { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        
+        .btn { padding: 8px 15px; text-decoration: none; border: none; border-radius: 4px; cursor: pointer; }
+        .btn-primary { background-color: #28a745; color: white; } /* Màu xanh lá cho nút Lưu */
+        .btn-secondary { background-color: #6c757d; color: white; }
+        .actions { margin-top: 20px; display: flex; gap: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Thêm Mới Sinh Viên</h1>
+
+    <div class="form-container">
+        <div th:if="${errorMessage != null}" style="color: red; background-color: #fdd; padding: 10px; margin-bottom: 15px; border-radius: 4px; border: 1px solid red;">
+            <span th:text="${errorMessage}"></span>
+        </div>
+        <form th:action="@{/students/save}" method="post">
+            
+            <div class="form-group">
+                <label for="id">ID Sinh Viên:</label>
+                <input type="text" id="id" name="id" placeholder="Ví dụ: SV001" required />
+            </div>
+
+            <div class="form-group">
+                <label for="name">Họ và Tên:</label>
+                <input type="text" id="name" name="name" placeholder="Nhập họ và tên..." required />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="example@email.com" required />
+            </div>
+
+            <div class="form-group">
+                <label for="age">Tuổi:</label>
+                <input type="number" id="age" name="age" min="1" max="100" placeholder="Nhập số tuổi..." required />
+            </div>
+
+            <div class="actions">
+                <button type="submit" class="btn btn-primary">Lưu Sinh Viên</button>
+                <a th:href="@{/students}" class="btn btn-secondary">Quay Lại</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

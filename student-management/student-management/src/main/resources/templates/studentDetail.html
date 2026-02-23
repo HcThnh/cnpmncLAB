@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi Tiết Sinh Viên</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .detail-box { border: 1px solid #ddd; padding: 20px; max-width: 400px; border-radius: 5px; }
+        .row { margin-bottom: 15px; }
+        .label { font-weight: bold; display: inline-block; width: 100px; }
+        .action-buttons { display: flex; gap: 10px; margin-top: 20px; }
+        
+        .btn { padding: 8px 15px; text-decoration: none; border: none; border-radius: 4px; cursor: pointer; }
+        .btn-secondary { background-color: #6c757d; color: white; }
+        .btn-warning { background-color: #ffc107; color: black; }
+        .btn-danger { background-color: #dc3545; color: white; }
+    </style>
+</head>
+<body>
+    <h1>Chi Tiết Sinh Viên</h1>
+
+    <div th:if="${student != null}" class="detail-box">
+        <div class="row"><span class="label">ID:</span> <span th:text="${student.id}"></span></div>
+        <div class="row"><span class="label">Họ và Tên:</span> <span th:text="${student.name}"></span></div>
+        <div class="row"><span class="label">Email:</span> <span th:text="${student.email}"></span></div>
+        <div class="row"><span class="label">Tuổi:</span> <span th:text="${student.age}"></span></div>
+
+        <div class="action-buttons">
+            <a th:href="@{/students}" class="btn btn-secondary">Quay Lại</a>
+
+            <a th:href="@{/students/edit/{id}(id=${student.id})}" class="btn btn-warning">Chỉnh Sửa</a>
+
+            <form th:action="@{/students/delete/{id}(id=${student.id})}" method="post" 
+                  onsubmit="return confirm('Bạn có chắc chắn muốn xóa sinh viên này không? Hành động này không thể hoàn tác!');">
+                <button type="submit" class="btn btn-danger">Xóa</button>
+            </form>
+        </div>
+    </div>
+
+    <div th:if="${student == null}">
+        <p style="color: red;">Không tìm thấy thông tin sinh viên!</p>
+        <a th:href="@{/students}" class="btn btn-secondary">Quay Lại Danh Sách</a>
+    </div>
+
+</body>
+</html>

@@ -36,4 +36,12 @@ public class StudentService {
 
         return findedStudents;
     }
+
+    public void deleteById(String id) {
+        repository.deleteById(id);
+    }
+
+    public void saveStudent(Student student) {
+        repository.save(student);
+    }
 }
