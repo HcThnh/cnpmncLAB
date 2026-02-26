@@ -84,4 +84,9 @@ public class StudentWebController {
 
         return "redirect:/students";
     }
+
+    @GetMapping("/")
+    public String Home() {
+        return "redirect:/students";
+    }
 }
