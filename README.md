@@ -1,2 +1,0 @@
-# cnpmncLAB
-cnpmnc
