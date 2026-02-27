@@ -1,37 +1,61 @@
 # Báo Cáo Thực Hành
 ## 1. Danh sách nhóm
 * **Thành viên 1:** Lê Trường Thịnh - 2213282
-* **Thành viên 2:** Huỳnh Cảnh Thịnh - [MSSV]
+* **Thành viên 2:** Huỳnh Cảnh Thịnh - 2213272
 
 ---
 
 ## 2. Public URL (Web Service)
-* **Link Deploy:** [Dán URL của b ở Lab 5 vào đây]
+* **Link Deploy:** https://doubletcnpmnc.onrender.com/students
 
 ---
 ## 3. Hướng dẫn cách chạy dự án
 ### Yêu cầu hệ thống:
 * **JDK:** 21
-* **Database:** SQLite
-* **IDE:** IntelliJ IDEA
+* **Database:** PostgreSQL (Có thể dùng Docker hoặc cài đặt cục bộ)
+* **IDE:** IntelliJ IDEA hoặc Eclipse/VS Code
 
 ### Các bước thực hiện:
 1. **Clone project:** `git clone [URL_PROJECT]`
-2. **Mở project:** Mở bằng IntelliJ IDEA và đợi tải Maven/Gradle.
-3. **Cấu hình SDK:** Đảm bảo dự án dùng JDK 21 (vào File > Project Structure).
-4. **Chạy ứng dụng:** Chạy file `Application.java` (chứa hàm main).
-5. **Truy cập:** Truy cập `http://localhost:8080`.
+2. **Cấu hình Database:** Cài đặt và khởi chạy PostgreSQL. Tạo cơ sở dữ liệu `student_management` trên PostgreSQL.
+3. **Cấu hình môi trường (`.env`):** Tạo file `.env` ở thư mục gốc của project với nội dung (nhớ cập nhật `POSTGRES_PASSWORD` cho đúng):
+   ```properties
+   POSTGRES_HOST=localhost
+   POSTGRES_PORT=5432
+   POSTGRES_DB=student_management
+   POSTGRES_USER=postgres
+   POSTGRES_PASSWORD=your_password_here
+   ```
+4. **Mở project:** Mở bằng IDE và đợi tải Maven.
+5. **Cấu hình SDK:** Đảm bảo dự án dùng JDK 21.
+6. **Chạy ứng dụng:** Chạy ứng dụng thông qua IDE (file `StudentManagementApplication.java`) hoặc dùng lệnh `mvnw spring-boot:run`.
+7. **Truy cập:** Truy cập ứng dụng tại `http://localhost:8080/students`.
+
 ---
 
 ## 4. Screenshot các module (Lab 4)
 
-### Module Quản lý Tour:
+### Trang Danh Sách & Tìm Kiếm (List View):
+![Screenshot List View](images/list_view.jpeg)
+*Giao diện danh sách toàn bộ sinh viên khi mới tải trang.*
 
-[//]: # (![Screenshot Tour Module]&#40;link_anh&#41;)
+![Screenshot List Search View](images/list_find_view.png)
+*Giao diện danh sách sinh viên sau khi nhập từ khóa tìm kiếm (Ví dụ: Tìm theo tên).*
 
-### Module Quản lý Người dùng:
+### Trang Chi Tiết Sinh Viên (Detail View):
+![Screenshot Detail View](images/detail_view.jpeg)
+*Trang xem chi tiết thông tin của một sinh viên (Đổ dữ liệu lên theo ID).*
 
-[//]: # (![Screenshot User Module]&#40;link_anh&#41;)
+### Thao tác Thêm & Sửa Sinh Viên:
+![Screenshot Add View](images/add_view.jpeg)
+*Giao diện Form thêm mới sinh viên (Form trống).*
+
+![Screenshot Edit View](images/edit_view.png)
+*Giao diện Form chỉnh sửa thông tin (Dữ liệu cũ được điền sẵn).*
+
+### Hộp thoại xác nhận Xóa (Confirm Dialog):
+![Screenshot Delete Confirm](images/delete_confirm.png)
+*Hộp thoại (Popup/Dialog) cảnh báo người dùng xác nhận trước khi thực hiện xóa một bản ghi sinh viên khỏi Database.*
 
 ---
 
