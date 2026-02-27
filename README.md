@@ -35,27 +35,26 @@
 
 ## 4. Screenshot các module (Lab 4)
 
-### Trang Danh Sách & Tìm Kiếm (List View):
+### 1.1 Trang Danh Sách (List View)
 ![Screenshot List View](images/list_view.jpeg)
 *Giao diện danh sách toàn bộ sinh viên khi mới tải trang.*
 
 ![Screenshot List Search View](images/list_find_view.png)
-*Giao diện danh sách sinh viên sau khi nhập từ khóa tìm kiếm (Ví dụ: Tìm theo tên).*
+*Giao diện danh sách sinh viên sau khi nhập từ khóa và tìm kiếm  (Ví dụ: Tìm theo tên).*
 
-### Trang Chi Tiết Sinh Viên (Detail View):
+### 1.2 Trang Chi Tiết (Detail View)
 ![Screenshot Detail View](images/detail_view.jpeg)
 *Trang xem chi tiết thông tin của một sinh viên (Đổ dữ liệu lên theo ID).*
 
-### Thao tác Thêm & Sửa Sinh Viên:
+![Screenshot Delete Confirm](images/delete_confirm.png)
+*Hộp thoại (Confirm Dialog) cảnh báo người dùng xác nhận trước khi thực hiện xóa.*
+
+### 1.3 Chức Năng Thêm & Sửa
 ![Screenshot Add View](images/add_view.jpeg)
 *Giao diện Form thêm mới sinh viên (Form trống).*
 
 ![Screenshot Edit View](images/edit_view.png)
 *Giao diện Form chỉnh sửa thông tin (Dữ liệu cũ được điền sẵn).*
-
-### Hộp thoại xác nhận Xóa (Confirm Dialog):
-![Screenshot Delete Confirm](images/delete_confirm.png)
-*Hộp thoại (Popup/Dialog) cảnh báo người dùng xác nhận trước khi thực hiện xóa một bản ghi sinh viên khỏi Database.*
 
 ---
 
